@@ -11,7 +11,12 @@ interface Meme {
   createdAt: string;
 }
 
-export default function MemePage({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: { id: string };
+};
+
+
+export default function MemePage({ params }: PageProps) {
   const [meme, setMeme] = useState<Meme | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
